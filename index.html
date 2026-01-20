@@ -51,6 +51,18 @@
         overflow-x: hidden;
       }
 
+      /* Cinematic Animations */
+      @keyframes mistMove {
+        0% { transform: translate(-10%, -10%) scale(1); opacity: 0.3; }
+        50% { transform: translate(10%, 5%) scale(1.1); opacity: 0.6; }
+        100% { transform: translate(-10%, -10%) scale(1); opacity: 0.3; }
+      }
+
+      @keyframes lightPulse {
+        0%, 100% { opacity: 0.4; filter: blur(100px); }
+        50% { opacity: 0.7; filter: blur(140px); }
+      }
+
       @keyframes revealUp {
         from { transform: translateY(100%); opacity: 0; }
         to { transform: translateY(0); opacity: 1; }
@@ -61,47 +73,27 @@
         to { opacity: 1; transform: translateY(0); }
       }
 
-      @keyframes float {
-        0%, 100% { transform: translateY(0) scale(1); }
-        50% { transform: translateY(-15px) scale(1.05); }
+      .animate-mist {
+        animation: mistMove 25s ease-in-out infinite;
       }
 
-      @keyframes shimmer {
-        0% { transform: translateX(-100%) skewX(-15deg); }
-        100% { transform: translateX(200%) skewX(-15deg); }
+      .animate-light-pulse {
+        animation: lightPulse 10s ease-in-out infinite;
       }
 
       .animate-reveal {
-        animation: revealUp 0.8s var(--animation-bezier) forwards;
+        animation: revealUp 1.2s var(--animation-bezier) forwards;
       }
 
       .animate-fade-in {
-        animation: fadeIn 0.8s var(--animation-bezier) forwards;
+        animation: fadeIn 1s var(--animation-bezier) forwards;
         opacity: 0;
       }
 
-      .stagger-1 { animation-delay: 0.1s; }
-      .stagger-2 { animation-delay: 0.2s; }
-      .stagger-3 { animation-delay: 0.3s; }
-      .stagger-4 { animation-delay: 0.4s; }
-
-      .shimmer-effect {
-        position: relative;
-        overflow: hidden;
-      }
-
-      .shimmer-effect::after {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; width: 50%; height: 100%;
-        background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.1), transparent);
-        transform: translateX(-100%) skewX(-15deg);
-        transition: none;
-      }
-
-      .shimmer-effect:hover::after {
-        animation: shimmer 1s var(--animation-bezier);
-      }
+      .stagger-1 { animation-delay: 0.2s; }
+      .stagger-2 { animation-delay: 0.4s; }
+      .stagger-3 { animation-delay: 0.6s; }
+      .stagger-4 { animation-delay: 0.8s; }
 
       .gold-gradient-text {
         background: linear-gradient(135deg, #f7e3af 0%, #d4af37 50%, #b8860b 100%);
@@ -115,25 +107,27 @@
 
       .glass-panel {
         background: rgba(22, 27, 34, 0.7);
-        backdrop-filter: blur(20px);
+        backdrop-filter: blur(24px);
         border: 1px solid rgba(212, 175, 55, 0.15);
-        transition: all 0.5s var(--animation-bezier);
+        transition: all 0.6s var(--animation-bezier);
       }
 
       .glass-panel:hover {
         border-color: rgba(212, 175, 55, 0.4);
-        background: rgba(30, 35, 45, 0.85);
-        box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.15);
+        background: rgba(30, 35, 45, 0.9);
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.1);
       }
 
-      .floating-bg {
-        animation: float 15s ease-in-out infinite;
-      }
-
+      /* Custom Scrollbar */
       ::-webkit-scrollbar { width: 6px; }
       ::-webkit-scrollbar-track { background: #05070a; }
       ::-webkit-scrollbar-thumb { background: rgba(212, 175, 55, 0.3); border-radius: 10px; }
       ::-webkit-scrollbar-thumb:hover { background: rgba(212, 175, 55, 0.6); }
+
+      .diagonal-rain-canvas {
+        pointer-events: none;
+        mix-blend-mode: screen;
+      }
     </style>
   <script type="importmap">
 {

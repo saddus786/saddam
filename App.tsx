@@ -1,17 +1,17 @@
 
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import Products from './pages/Products';
-import ProductDetail from './pages/ProductDetail';
-import ROICalculator from './pages/ROICalculator';
-import Sustainability from './pages/Sustainability';
-import Workflow from './pages/Workflow';
-import Downloads from './pages/Downloads';
-import Certifications from './pages/Certifications';
-import Videos from './pages/Videos';
-import Quote from './pages/Quote';
+import Layout from './components/Layout.tsx';
+import Home from './pages/Home.tsx';
+import Products from './pages/Products.tsx';
+import ProductDetail from './pages/ProductDetail.tsx';
+import ROICalculator from './pages/ROICalculator.tsx';
+import Sustainability from './pages/Sustainability.tsx';
+import Workflow from './pages/Workflow.tsx';
+import Downloads from './pages/Downloads.tsx';
+import Certifications from './pages/Certifications.tsx';
+import Videos from './pages/Videos.tsx';
+import Quote from './pages/Quote.tsx';
 
 const App: React.FC = () => {
   return (

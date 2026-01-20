@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vishwakarma Engineering | High-Performance Briquetting Machines</title>
+    <title>Vishwakarma Engineering | Premium Industrial Briquetting Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
@@ -14,21 +14,53 @@
         theme: {
           extend: {
             colors: {
-              primary: '#2d5a27', // Emerald Green from Logo
-              accent: '#d4af37',  // Industrial Gold from Logo
-              'background-light': '#f8fafc',
-              'background-dark': '#0f172a', // Deep Navy from Logo
-              'industrial-charcoal': '#1e293b',
-              'steel-silver': '#94a3b8'
+              midnight: '#05070a',
+              charcoal: '#0d1117',
+              steel: '#161b22',
+              gold: {
+                DEFAULT: '#d4af37',
+                light: '#f1d592',
+                dark: '#aa8b2b'
+              },
+              ivory: '#fdf5e6',
+              emerald: '#10b981',
+              royal: '#2563eb'
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
             },
+            boxShadow: {
+              'gold-glow': '0 0 20px rgba(212, 175, 55, 0.3)',
+              'emerald-glow': '0 0 20px rgba(16, 185, 129, 0.3)',
+              'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.8)',
+            }
           },
         },
       };
     </script>
     <style>
+      body {
+        background-color: #05070a;
+        color: #cbd5e1;
+        margin: 0;
+        -webkit-font-smoothing: antialiased;
+      }
+      .gold-gradient-text {
+        background: linear-gradient(135deg, #d4af37 0%, #f1d592 50%, #aa8b2b 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .gold-gradient-bg {
+        background: linear-gradient(135deg, #d4af37 0%, #aa8b2b 100%);
+      }
+      .glass-panel {
+        background: rgba(22, 27, 34, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(212, 175, 55, 0.15);
+      }
+      .glass-panel:hover {
+        border-color: rgba(212, 175, 55, 0.4);
+      }
       .material-symbols-outlined {
         font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
       }
@@ -36,20 +68,11 @@
         width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #f1f1f1;
+        background: #05070a;
       }
       ::-webkit-scrollbar-thumb {
-        background: #2d5a27;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
         background: #d4af37;
-      }
-      .gold-gradient {
-        background: linear-gradient(135deg, #d4af37 0%, #f1d592 50%, #d4af37 100%);
-      }
-      .emerald-shadow {
-        box-shadow: 0 10px 30px -10px rgba(45, 90, 39, 0.4);
+        border-radius: 4px;
       }
     </style>
   <script type="importmap">
@@ -65,7 +88,6 @@
 </head>
   <body>
     <div id="root"></div>
-    <!-- Entry point for the application -->
     <script type="module" src="./index.tsx"></script>
   </body>
 </html>

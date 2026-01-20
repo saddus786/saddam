@@ -1,8 +1,5 @@
 
 export const IMAGES = {
-  // Using a high-quality industrial emblem that matches the requested design
-  LOGO: "https://cdn-icons-png.flaticon.com/512/4612/4612548.png", 
-  FALLBACK_LOGO: "https://cdn-icons-png.flaticon.com/512/1055/1055644.png",
   HERO: {
     VIDEO_ID: "0jssIapAiVY",
     FALLBACK_THUMB: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1920"

@@ -158,12 +158,19 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </div>
           </div>
 
-          {/* Bottom Bar - Updated Attribution */}
+          {/* Bottom Bar - Updated Attribution with Link */}
           <div className="pt-12 border-t border-gold/5 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-600 flex flex-wrap justify-center gap-2">
+            <div className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-600 flex flex-wrap justify-center gap-4">
               <span>© 2024 Vishwakarma Engineering.</span>
-              <span className="text-gold/40">Powered by Saddu.com</span>
-            </p>
+              <a 
+                href="https://saddu.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gold/40 hover:text-gold transition-all duration-300"
+              >
+                Powered by Saddu.com
+              </a>
+            </div>
           </div>
         </div>
       </footer>

@@ -99,14 +99,15 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <main className="flex-1">{children}</main>
 
       {/* Footer - Deep Dark Redesign */}
-      <footer className="bg-charcoal py-24 border-t border-gold/10 overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 blur-[120px] rounded-full pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
+      <footer className="bg-[#080a0f] py-32 border-t border-gold/10 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 blur-[150px] rounded-full pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
-            <div className="col-span-1 md:col-span-2 space-y-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
+            {/* Branding Column */}
+            <div className="md:col-span-5 space-y-10">
               <div className="flex flex-col">
-                <span className="font-black text-4xl uppercase leading-none tracking-tighter gold-gradient-text">Vishwakarma</span>
-                <span className="font-bold text-2xl uppercase leading-none tracking-tighter text-ivory opacity-40">Engineering</span>
+                <span className="font-black text-5xl uppercase leading-none tracking-tighter gold-gradient-text">Vishwakarma</span>
+                <span className="font-bold text-3xl uppercase leading-none tracking-tighter text-ivory opacity-40">Engineering</span>
               </div>
               <p className="text-slate-400 max-w-sm leading-relaxed text-lg font-medium">
                 Established 1995. Pioneering the future of industrial biomass energy through high-precision engineering and sustainable manufacturing.
@@ -115,37 +116,54 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 <a href="https://wa.me/919173477775" target="_blank" className="size-14 rounded-full glass-panel flex items-center justify-center text-gold hover:bg-gold hover:text-midnight transition-all shadow-gold-glow">
                   <span className="material-symbols-outlined text-2xl">chat</span>
                 </a>
-                <a href="mailto:sales@vishwakarma.com" className="size-14 rounded-full glass-panel flex items-center justify-center text-gold hover:bg-gold hover:text-midnight transition-all">
+                <a href="mailto:info@vishwakarmaeng.com" className="size-14 rounded-full glass-panel flex items-center justify-center text-ivory hover:bg-gold hover:text-midnight transition-all">
                   <span className="material-symbols-outlined text-2xl">mail</span>
                 </a>
               </div>
             </div>
-            <div>
-              <h4 className="font-black uppercase text-[10px] tracking-[0.3em] mb-10 text-gold-light">Navigation</h4>
-              <ul className="space-y-5 text-xs font-black uppercase tracking-[0.2em] text-slate-500">
+
+            {/* Navigation Column */}
+            <div className="md:col-span-3 space-y-8">
+              <h4 className="text-[11px] font-black text-gold uppercase tracking-[0.4em] mb-4">Navigation</h4>
+              <nav className="flex flex-col gap-5">
                 {navLinks.slice(0, 5).map((link) => (
-                  <li key={link.path}>
-                    <Link to={link.path} className="hover:text-gold transition-colors">{link.name}</Link>
-                  </li>
+                  <Link 
+                    key={link.path} 
+                    to={link.path} 
+                    className="text-sm font-black uppercase tracking-[0.2em] text-ivory/60 hover:text-gold transition-colors"
+                  >
+                    {link.name}
+                  </Link>
                 ))}
-              </ul>
+              </nav>
             </div>
-            <div>
-              <h4 className="font-black uppercase text-[10px] tracking-[0.3em] mb-10 text-gold-light">Headquarters</h4>
-              <ul className="space-y-8 text-xs font-bold text-slate-400 uppercase tracking-widest">
-                <li className="flex items-start gap-4">
-                  <span className="material-symbols-outlined text-gold text-2xl">location_on</span>
-                  <span className="leading-relaxed text-ivory">Rajkot, Gujarat, 360004<br />India</span>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="material-symbols-outlined text-gold text-2xl">call</span>
-                  <span className="text-ivory font-black">+91 91734 77775</span>
-                </li>
-              </ul>
+
+            {/* Headquarters Column */}
+            <div className="md:col-span-4 space-y-8">
+              <h4 className="text-[11px] font-black text-gold uppercase tracking-[0.4em] mb-4">Headquarters</h4>
+              <div className="space-y-8">
+                <div className="flex gap-5">
+                  <span className="material-symbols-outlined text-gold">location_on</span>
+                  <p className="text-sm font-black uppercase tracking-[0.15em] text-ivory/80 leading-relaxed">
+                    Rajkot, Gujarat, 360004<br />India
+                  </p>
+                </div>
+                <div className="flex gap-5">
+                  <span className="material-symbols-outlined text-gold">call</span>
+                  <p className="text-sm font-black uppercase tracking-[0.15em] text-ivory/80">
+                    +91 91734 77775
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="border-t border-white/5 pt-12 text-[10px] text-slate-600 font-black uppercase tracking-[0.4em] text-center">
-            © 2024 Vishwakarma Engineering. Powered by Precision.
+
+          {/* Bottom Bar - Updated Attribution */}
+          <div className="pt-12 border-t border-gold/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-600 flex flex-wrap justify-center gap-2">
+              <span>© 2024 Vishwakarma Engineering.</span>
+              <span className="text-gold/40">Powered by Saddu.com</span>
+            </p>
           </div>
         </div>
       </footer>
